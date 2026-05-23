@@ -23,7 +23,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ${{ secrets.FTP_PROTOCOL || 'ftp' }}
           local-dir: ./
-          server-dir: ${{ secrets.FTP_SERVER_DIR || './' }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR || 'public_html/islandmitzvah/' }}
           exclude: |
             **/.git*
             **/.git*/**
