@@ -22,6 +22,7 @@ jobs:
           lftp -c "
             set cmd:fail-exit no;
             set ftp:ssl-allow true;
+            set ssl:verify-certificate no;
             open -u \"$FTP_USERNAME\",\"$FTP_PASSWORD\" \"$FTP_PROTOCOL://$FTP_SERVER\";
             cd \"$FTP_SERVER_DIR\";
             rm -f index.html;
@@ -34,7 +35,7 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
           FTP_PROTOCOL: ${{ secrets.FTP_PROTOCOL || 'ftp' }}
-          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR || './' }}
+          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR || '../' }}
 
       - name: Upload files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -44,7 +45,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ${{ secrets.FTP_PROTOCOL || 'ftp' }}
           local-dir: ./
-          server-dir: ${{ secrets.FTP_SERVER_DIR || './' }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR || '../' }}
           exclude: |
             **/.git*
             **/.git*/**
