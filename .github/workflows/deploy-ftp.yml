@@ -15,28 +15,6 @@ jobs:
       - name: Check out site
         uses: actions/checkout@v4
 
-      - name: Remove previous placeholder files
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y lftp
-          lftp -c "
-            set cmd:fail-exit no;
-            set ftp:ssl-allow true;
-            set ssl:verify-certificate no;
-            open -u \"$FTP_USERNAME\",\"$FTP_PASSWORD\" \"$FTP_PROTOCOL://$FTP_SERVER\";
-            cd \"$FTP_SERVER_DIR\";
-            rm -f index.html;
-            rm -f working-logo-clean.png;
-            rm -f .ftp-deploy-sync-state.json;
-            bye
-          "
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER || secrets.FTP_HOST }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          FTP_PROTOCOL: ${{ secrets.FTP_PROTOCOL || 'ftp' }}
-          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR || '../' }}
-
       - name: Upload files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
