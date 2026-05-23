@@ -1,0 +1,17 @@
+.DS_Store
+
+# Local logo-generation and export scratch files
+*.eps
+*.jsx
+*.py
+*-preview*.jpg
+*-preview*.png
+*-comparison.png
+*-check*.png
+*-source*.png
+*-transparent.png
+*-white.jpg
+*-dark.jpg
+island-mitzvah-logo-vector.svg
+island-mitzvah-palm-*.svg
+island-mitzvah-palm-raster.png
