@@ -3,35 +3,45 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Island Mitzvah Co. | Barbados Destination Bar & Bat Mitzvahs</title>
+    <title>Barbados Bar & Bat Mitzvah and Jewish Wedding Planning | Island Mitzvah Co.</title>
     <meta
       name="description"
-      content="Island Mitzvah Co. plans destination bar mitzvahs, bat mitzvahs, Jewish weddings, lifecycle celebrations, and Jewish travel experiences in Barbados."
+      content="Island Mitzvah Co. plans destination bar and bat mitzvahs, Jewish weddings, lifecycle celebrations, rabbi sourcing, catering, venues, and Jewish tourism in Barbados."
     >
     <meta
       name="keywords"
-      content="Barbados bar mitzvah, Barbados bat mitzvah, destination bar mitzvah, destination bat mitzvah, Jewish weddings Barbados, Jewish events Barbados, Jewish lifecycle events, Jewish travel Barbados, Jewish tourism Barbados"
+      content="Barbados bar mitzvah, Barbados bat mitzvah, Jewish wedding Barbados, destination bar mitzvah, destination Jewish wedding, Nidhe Israel Synagogue, kosher catering Barbados, Jewish travel Barbados"
     >
     <meta name="robots" content="index, follow">
     <meta name="author" content="Island Mitzvah Co.">
     <meta name="theme-color" content="#f6f3ee">
+    <meta name="geo.region" content="BB">
+    <meta name="geo.placename" content="Barbados">
     <link rel="canonical" href="https://islandmitzvah.com/">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Island Mitzvah Co.">
-    <meta property="og:title" content="Island Mitzvah Co. | Jewish Destination Events in Barbados">
+    <meta property="og:title" content="Barbados Jewish Destination Events | Island Mitzvah Co.">
     <meta
       property="og:description"
-      content="Destination bar mitzvahs, bat mitzvahs, Jewish weddings, lifecycle celebrations, and Jewish tourism in Barbados."
+      content="Destination bar and bat mitzvahs, Jewish weddings, lifecycle celebrations, rabbi sourcing, venues, catering, and Jewish tourism in Barbados."
     >
     <meta property="og:url" content="https://islandmitzvah.com/">
-    <meta property="og:image" content="https://islandmitzvah.com/working-logo-clean.png">
+    <meta property="og:image" content="https://islandmitzvah.com/barbados-beach-palm.jpg">
+    <meta property="og:image:alt" content="Palm trees and turquoise water in Barbados">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Island Mitzvah Co. | Barbados Jewish Destination Events">
+    <meta name="twitter:title" content="Barbados Jewish Destination Events | Island Mitzvah Co.">
     <meta
       name="twitter:description"
-      content="Planning Jewish destination celebrations and travel experiences in Barbados."
+      content="Planning bar and bat mitzvahs, Jewish weddings, lifecycle celebrations, and Jewish tourism in Barbados."
     >
-    <meta name="twitter:image" content="https://islandmitzvah.com/working-logo-clean.png">
+    <meta name="twitter:image" content="https://islandmitzvah.com/barbados-beach-palm.jpg">
+    <meta name="twitter:image:alt" content="Palm trees and turquoise water in Barbados">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -40,7 +50,10 @@
         "url": "https://islandmitzvah.com/",
         "email": "info@islandmitzvah.com",
         "image": "https://islandmitzvah.com/working-logo-clean.png",
-        "description": "Island Mitzvah Co. organizes destination bar mitzvahs, bat mitzvahs, Jewish weddings, lifecycle celebrations, and Jewish tourism experiences in Barbados.",
+        "logo": "https://islandmitzvah.com/working-logo-clean.png",
+        "slogan": "Jewish milestones in paradise.",
+        "description": "Island Mitzvah Co. organizes destination bar and bat mitzvahs, Jewish weddings, lifecycle celebrations, and Jewish tourism experiences in Barbados.",
+        "priceRange": "$$",
         "areaServed": {
           "@type": "Country",
           "name": "Barbados"
@@ -53,16 +66,25 @@
           "Destination bar mitzvahs",
           "Destination bat mitzvahs",
           "Jewish weddings",
-          "Jewish lifecycle events",
-          "Jewish travel",
+          "Rabbi sourcing",
+          "Kosher catering coordination",
+          "Barbados event venues",
+          "Island transportation",
+          "Nidhe Israel Synagogue",
+          "Jewish history in Barbados",
           "Jewish tourism in Barbados"
         ],
         "serviceType": [
           "Destination bar mitzvah planning",
           "Destination bat mitzvah planning",
           "Jewish wedding planning",
-          "Jewish lifecycle event planning",
-          "Jewish tourism coordination"
+          "Rabbi and officiant sourcing",
+          "Catering coordination",
+          "Entertainment booking",
+          "Photography, videography, and drone coverage",
+          "Airport transfer coordination",
+          "Accommodation coordination",
+          "Jewish heritage tourism"
         ]
       }
     </script>
@@ -70,99 +92,987 @@
       :root {
         --logo-background: #f6f3ee;
         --ink: #063f4b;
+        --teal: #0d5964;
+        --sea: #2f7f86;
+        --coral: #c86f4a;
+        --gold: #d4a650;
+        --paper: #fffaf2;
+        --white: #ffffff;
+        --muted: rgba(6, 63, 75, 0.72);
+        --line: rgba(6, 63, 75, 0.14);
+        --shadow: 0 24px 70px rgba(6, 63, 75, 0.13);
       }
 
       * {
         box-sizing: border-box;
       }
 
-      html,
-      body {
-        min-height: 100%;
+      html {
+        scroll-behavior: smooth;
       }
 
       body {
         margin: 0;
         background: var(--logo-background);
         color: var(--ink);
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "Instrument Sans", Arial, Helvetica, sans-serif;
+        line-height: 1.6;
         overflow-x: hidden;
       }
 
-      main {
-        display: grid;
-        min-height: 100svh;
-        place-items: center;
-        padding: clamp(2rem, 7vw, 5rem);
-        text-align: center;
-      }
-
-      .placeholder {
-        display: grid;
-        justify-items: center;
-        gap: clamp(1.2rem, 3vw, 2rem);
-        width: min(100%, 58rem);
-      }
-
-      .logo {
+      img {
         display: block;
-        width: min(100%, 38rem);
-        height: auto;
+        max-width: 100%;
       }
 
-      .email {
-        color: var(--ink);
-        font-size: clamp(1rem, 2.5vw, 1.35rem);
-        font-weight: 700;
-        letter-spacing: 0.04em;
+      a {
+        color: inherit;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .site-shell {
+        overflow: hidden;
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 40px));
+        margin-inline: auto;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(246, 243, 238, 0.92);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(18px);
+      }
+
+      .topbar .container {
+        width: calc(100% - clamp(40px, 5vw, 84px));
+        max-width: none;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 94px;
+        padding: 0;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
         text-decoration: none;
       }
 
-      .email:hover,
-      .email:focus-visible {
-        text-decoration: underline;
-        text-underline-offset: 0.28em;
+      .brand-logo-mark,
+      .brand-script-line {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        flex: 0 0 auto;
       }
 
-      .tagline {
-        max-width: 42rem;
-        margin: -0.5rem 0 0;
+      .brand-logo-mark {
+        width: 152px;
+        height: 84px;
+      }
+
+      .brand-logo-mark img,
+      .brand-script-line img {
+        position: absolute;
+        max-width: none;
+        height: auto;
+      }
+
+      .brand-logo-mark img {
+        top: 0;
+        left: 0;
+        width: 152px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: clamp(0.9rem, 2.1vw, 1.75rem);
         color: rgba(6, 63, 75, 0.82);
-        font-size: clamp(0.86rem, 1.8vw, 1.05rem);
-        font-weight: 600;
-        line-height: 1.55;
+        font-size: clamp(0.98rem, 1.1vw, 1.08rem);
+        font-weight: 700;
       }
 
-      @media (max-width: 600px) {
-        main {
-          padding-inline: 1.25rem;
+      .nav-links a {
+        text-decoration: none;
+      }
+
+      .nav-links a:hover,
+      .nav-links a:focus-visible {
+        color: var(--coral);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0.8rem 1.05rem;
+        border: 1px solid var(--ink);
+        background: var(--ink);
+        color: var(--white);
+        font-size: 0.9rem;
+        font-weight: 800;
+        line-height: 1;
+        text-decoration: none;
+        transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        background: var(--coral);
+        border-color: var(--coral);
+        transform: translateY(-1px);
+      }
+
+      .button.secondary {
+        background: transparent;
+        color: var(--ink);
+      }
+
+      .button.secondary:hover,
+      .button.secondary:focus-visible {
+        background: var(--ink);
+        border-color: var(--ink);
+        color: var(--white);
+      }
+
+      .hero {
+        position: relative;
+        padding: 0;
+        background: #062f38;
+      }
+
+      .hero > .container {
+        width: 100%;
+        max-width: none;
+      }
+
+      .hero-grid {
+        position: relative;
+        min-height: clamp(620px, 76vh, 780px);
+        display: block;
+      }
+
+      .hero-grid > *,
+      .section-head > *,
+      .location-grid > *,
+      .cta-grid > * {
+        min-width: 0;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        margin: 0 0 1rem;
+        color: var(--coral);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 36px;
+        height: 2px;
+        background: var(--gold);
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 0.98;
+      }
+
+      h1 {
+        max-width: 12ch;
+        font-size: clamp(3rem, 6.2vw, 5.25rem);
+        overflow-wrap: break-word;
+      }
+
+      h2 {
+        max-width: 14ch;
+        color: rgba(6, 63, 75, 0.84);
+        font-family: "Cormorant Garamond", "Newsreader", Georgia, serif;
+        font-size: clamp(3rem, 5.4vw, 5.7rem);
+        font-style: italic;
+        font-weight: 600;
+        line-height: 0.95;
+      }
+
+      h3 {
+        font-size: clamp(1.45rem, 2vw, 2rem);
+        line-height: 1.08;
+      }
+
+      .lead {
+        max-width: 42rem;
+        margin: 1.1rem 0 0;
+        color: var(--muted);
+        font-size: clamp(1.06rem, 1.7vw, 1.28rem);
+        line-height: 1.65;
+        overflow-wrap: break-word;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 1.55rem;
+      }
+
+      .quick-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+        margin: 1.55rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .quick-list li {
+        border: 1px solid var(--line);
+        background: rgba(255, 250, 242, 0.68);
+        padding: 0.45rem 0.7rem;
+        color: var(--teal);
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      .hero-visual {
+        position: absolute;
+        inset: 0;
+      }
+
+      .hero-photo {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border: 0;
+        background: #062f38;
+        box-shadow: none;
+      }
+
+      .hero-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(246, 243, 238, 0.94) 0%, rgba(246, 243, 238, 0.82) 35%, rgba(246, 243, 238, 0.24) 64%, rgba(6, 63, 75, 0.08) 100%),
+          linear-gradient(180deg, rgba(6, 63, 75, 0.1), rgba(6, 63, 75, 0.18));
+        pointer-events: none;
+      }
+
+      .hero-photo img,
+      .hero-photo video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        aspect-ratio: auto;
+        object-fit: cover;
+      }
+
+      .hero-note {
+        display: none;
+      }
+
+      .hero-note strong {
+        display: block;
+        margin-bottom: 0.25rem;
+        font-size: 0.92rem;
+      }
+
+      .hero-note span {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 1;
+        width: min(100%, 46rem);
+        margin-left: max(20px, calc((100vw - 1120px) / 2));
+        padding: clamp(3rem, 7vw, 6.5rem) 0 clamp(2.75rem, 6vw, 5.5rem);
+      }
+
+      .hero-copy h1 {
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.22);
+      }
+
+      .hero-copy .lead {
+        color: rgba(6, 63, 75, 0.84);
+        font-weight: 500;
+      }
+
+      .section {
+        padding: clamp(3rem, 8vw, 6.5rem) 0;
+      }
+
+      .section.alt {
+        background: var(--paper);
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 0.72fr) minmax(260px, 0.6fr);
+        gap: 2rem;
+        align-items: end;
+        margin-bottom: clamp(1.8rem, 4vw, 3rem);
+      }
+
+      .section-head p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.02rem;
+      }
+
+      .event-grid,
+      .service-grid,
+      .tourism-grid,
+      .highlight-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .event-card,
+      .service-card,
+      .tourism-card,
+      .highlight-card {
+        min-height: 100%;
+        padding: clamp(1.2rem, 2.3vw, 1.6rem);
+        background: rgba(255, 255, 255, 0.64);
+        border: 1px solid var(--line);
+      }
+
+      .event-card {
+        border-top: 5px solid var(--sea);
+      }
+
+      .event-card:nth-child(2) {
+        border-top-color: var(--gold);
+      }
+
+      .event-card:nth-child(3) {
+        border-top-color: var(--coral);
+      }
+
+      .event-card p,
+      .service-card p,
+      .tourism-card p,
+      .highlight-card p {
+        margin: 0.8rem 0 0;
+        color: var(--muted);
+      }
+
+      .service-card strong,
+      .tourism-card strong,
+      .highlight-card strong {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--ink);
+        font-size: 1rem;
+      }
+
+      .story-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.7fr);
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: center;
+      }
+
+      .story-copy p {
+        color: var(--muted);
+      }
+
+      .story-panel {
+        padding: clamp(1.4rem, 3vw, 2rem);
+        background: var(--white);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .story-panel img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        margin-bottom: 1.2rem;
+      }
+
+      .story-panel h3 {
+        margin-bottom: 0.75rem;
+      }
+
+      .location-grid {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: center;
+      }
+
+      .location-copy p {
+        color: var(--muted);
+      }
+
+      .feature-list {
+        display: grid;
+        gap: 0.85rem;
+        margin: 1.5rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .feature-list li {
+        display: grid;
+        grid-template-columns: 12px 1fr;
+        gap: 0.75rem;
+        color: rgba(6, 63, 75, 0.84);
+      }
+
+      .feature-list li::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        margin-top: 0.48rem;
+        background: var(--coral);
+      }
+
+      .photo-grid {
+        display: grid;
+        grid-template-columns: 1fr 0.72fr;
+        gap: 0.8rem;
+      }
+
+      .photo-grid figure {
+        margin: 0;
+        overflow: hidden;
+        background: var(--white);
+        border: 1px solid var(--line);
+      }
+
+      .photo-grid figure:first-child {
+        grid-row: span 2;
+      }
+
+      .photo-grid img {
+        width: 100%;
+        height: 100%;
+        min-height: 190px;
+        object-fit: cover;
+      }
+
+      .photo-grid figure:first-child img {
+        aspect-ratio: 4 / 5;
+      }
+
+      .process {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+
+      .process-step {
+        min-height: 190px;
+        padding: 1.35rem;
+        background: var(--logo-background);
+      }
+
+      .process-step span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        margin-bottom: 1.2rem;
+        background: var(--ink);
+        color: var(--white);
+        font-weight: 800;
+      }
+
+      .process-step h3 {
+        font-family: "Instrument Sans", Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+        font-weight: 800;
+        line-height: 1.3;
+      }
+
+      .process-step p {
+        margin: 0.7rem 0 0;
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .cta {
+        background: var(--ink);
+        color: var(--white);
+      }
+
+      .cta-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .cta h2,
+      .cta p {
+        color: var(--white);
+      }
+
+      .cta p {
+        max-width: 44rem;
+        margin: 1rem 0 0;
+        opacity: 0.8;
+      }
+
+      .cta .button {
+        background: var(--white);
+        border-color: var(--white);
+        color: var(--ink);
+      }
+
+      .footer {
+        padding: 2rem 0;
+        background: #042f38;
+        color: rgba(255, 255, 255, 0.74);
+        font-size: 0.82rem;
+      }
+
+      .footer-grid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .footer a {
+        color: var(--white);
+      }
+
+      @media (max-width: 920px) {
+        .section-head,
+        .story-grid,
+        .location-grid,
+        .cta-grid {
+          grid-template-columns: 1fr;
         }
 
-        .placeholder {
-          gap: 1rem;
+        .hero-note {
+          right: 18px;
+        }
+
+        .event-grid,
+        .service-grid,
+        .tourism-grid,
+        .highlight-grid,
+        .process {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 760px) {
+        .nav {
+          align-items: flex-start;
+          flex-direction: column;
+          padding: 1rem 0;
+        }
+
+        .nav-links {
+          width: 100%;
+          flex-wrap: wrap;
+          gap: 0.9rem 1.2rem;
+          font-size: 0.9rem;
+        }
+
+        .nav-links .button {
+          width: auto;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          width: calc(100% - 28px);
+          max-width: 1120px;
+        }
+
+        .hero-grid,
+        .hero-copy,
+        .hero h1,
+        .hero .lead,
+        .hero-actions {
+          max-width: 22rem;
+        }
+
+        .hero .lead {
+          width: 100%;
           max-width: 18rem;
-          transform: translateY(-1vh);
+          font-size: 1rem;
         }
 
-        .logo {
-          width: min(74vw, 17rem);
+        .hero-grid {
+          min-height: 720px;
         }
 
-        .tagline {
-          max-width: 16rem;
+        .hero-copy {
+          width: min(100% - 28px, 22rem);
+          margin-inline: auto;
+          padding: 3rem 0;
+        }
+
+        .brand {
+          gap: 0.65rem;
+        }
+
+        .brand-logo-mark {
+          width: 112px;
+          height: 62px;
+        }
+
+        .brand-logo-mark img {
+          width: 112px;
+        }
+
+        .brand-script-line {
+          width: 230px;
+          height: 23px;
+        }
+
+        .brand-script-line img {
+          width: 230px;
+        }
+
+        .nav-links {
+          display: grid;
+          width: 100%;
+          max-width: 100%;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0.65rem;
+          font-size: 0.78rem;
+          justify-items: center;
+        }
+
+        .nav-links .button {
+          grid-column: 1 / -1;
+          width: 100%;
+        }
+
+        .nav-links a:not(.button) {
+          text-align: center;
+        }
+
+        h1 {
+          max-width: 100%;
+          font-size: clamp(2.3rem, 10.5vw, 2.85rem);
+        }
+
+        .eyebrow {
+          max-width: 18rem;
+          font-size: 0.68rem;
+          letter-spacing: 0.1em;
+        }
+
+        .eyebrow::before {
+          width: 28px;
+        }
+
+        .hero-photo::after {
+          background:
+            linear-gradient(180deg, rgba(246, 243, 238, 0.96) 0%, rgba(246, 243, 238, 0.86) 48%, rgba(246, 243, 238, 0.38) 100%),
+            linear-gradient(90deg, rgba(6, 63, 75, 0.12), rgba(6, 63, 75, 0.04));
+        }
+
+        .hero-note {
+          position: static;
+          width: 100%;
+        }
+
+        .event-grid,
+        .service-grid,
+        .tourism-grid,
+        .highlight-grid,
+        .process,
+        .photo-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .photo-grid figure:first-child {
+          grid-row: auto;
+        }
+
+        .cta .button {
+          width: 100%;
         }
       }
     </style>
   </head>
   <body>
-    <main>
-      <section class="placeholder" aria-label="Island Mitzvah Co.">
-        <img class="logo" src="working-logo-clean.png" alt="Island Mitzvah Co.">
-        <a class="email" href="mailto:info@islandmitzvah.com">info@islandmitzvah.com</a>
-        <h1 class="tagline">
-          Destination Bar & Bat Mitzvahs, Jewish Weddings, Lifecycle Events, and Jewish Travel in Barbados.
-        </h1>
-      </section>
-    </main>
+    <div class="site-shell">
+      <header class="topbar">
+        <nav class="container nav" aria-label="Primary navigation">
+          <a class="brand" href="#top" aria-label="Island Mitzvah Co. home">
+            <span class="brand-logo-mark" aria-hidden="true">
+              <img src="working-logo-clean.png" alt="">
+            </span>
+            <span class="visually-hidden">Island Mitzvah Co. Unforgettable Simchas, Timeless Memories.</span>
+          </a>
+          <div class="nav-links">
+            <a href="#celebrations">Celebrations</a>
+            <a href="#services">Services</a>
+            <a href="#locations">Locations</a>
+            <a href="#jewish-tourism">Jewish Tourism</a>
+            <a class="button" href="mailto:info@islandmitzvah.com?subject=Mitzvah%20in%20Paradise">Start Planning</a>
+          </div>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="container hero-grid">
+            <div class="hero-visual" aria-label="Barbados beach video">
+              <div class="hero-photo">
+                <video autoplay muted loop playsinline preload="metadata" poster="barbados-beach-palm.jpg" aria-label="Barbados beach scene">
+                  <source src="island-mitzvah-hero.mp4" type="video/mp4">
+                  <img src="barbados-beach-palm.jpg" alt="A coconut palm over a white sand beach and turquoise water in Barbados">
+                </video>
+              </div>
+            </div>
+            <div class="hero-copy">
+              <p class="eyebrow">Simchas in Barbados</p>
+              <h1>Jewish milestones in paradise.</h1>
+              <p class="lead">
+                Island Mitzvah Co. offers bespoke planning for Jewish lifecycle events
+                in Barbados and throughout the Caribbean. From b'nai mitzvot to weddings
+                and baby namings, Island Mitzvah will coordinate the perfect event for
+                you and your family.
+              </p>
+              <div class="hero-actions">
+                <a class="button" href="mailto:info@islandmitzvah.com?subject=Mitzvah%20in%20Paradise">Plan Your Event</a>
+                <a class="button secondary" href="#services">Explore Services</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alt" id="celebrations">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Celebrations</p>
+                <h2>Built around your family.</h2>
+              </div>
+              <p>
+                Barbados offers the perfect Caribbean destination to celebrate your
+                mitzvah with family and friends in paradise. Whether in our nearly
+                400-year-old synagogue or on a sandy beach next to azure blue waters,
+                your loved ones will experience the joys of Jewish island life.
+              </p>
+            </div>
+            <div class="event-grid">
+              <article class="event-card">
+                <h3>Bar and Bat Mitzvahs</h3>
+                <p>
+                  Ceremony planning, Torah-reading support conversations, family meals,
+                  beach celebrations, music, photography, videography, and meaningful
+                  island experiences for guests of every age.
+                </p>
+              </article>
+              <article class="event-card">
+                <h3>Jewish Weddings</h3>
+                <p>
+                  Chuppah settings, rabbi or officiant sourcing, vendor coordination,
+                  welcome events, rehearsal dinners, day-of party management, and family
+                  hospitality across the wedding weekend.
+                </p>
+              </article>
+              <article class="event-card">
+                <h3>Lifecycle Gatherings</h3>
+                <p>
+                  Shabbat dinners, anniversary trips, family reunions, heritage tours, and
+                  private Jewish travel moments shaped with care and local knowledge.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="services">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Services</p>
+                <h2>Everything to make the perfect day.</h2>
+              </div>
+              <p>
+                Island Mitzvah Co. offers full-service or a la carte planning to ensure
+                your mitzvah happens as envisioned. From airport transfers to in-room
+                gift bags, we're ready to organize the entire mitzvah or just the
+                tricky details to arrange from afar.
+              </p>
+            </div>
+            <div class="service-grid">
+              <article class="service-card">
+                <strong>Rabbi and officiant sourcing</strong>
+                <p>Help identifying rabbis or Jewish officiants for ceremonies, blessings, and family milestone moments.</p>
+              </article>
+              <article class="service-card">
+                <strong>Catering</strong>
+                <p>Coordination for menus, kosher or kosher-style, Shabbat meals, welcome dinners, receptions, and beach-friendly service.</p>
+              </article>
+              <article class="service-card">
+                <strong>Locations</strong>
+                <p>Beach settings, hotels, villas, private venues, and heritage experiences centered around Bridgetown and the Nidhe Israel Synagogue district.</p>
+              </article>
+              <article class="service-card">
+                <strong>DJs and musicians</strong>
+                <p>Entertainment sourcing for hora-ready receptions, relaxed cocktail hours, steel pan moments, and late-night dance floors.</p>
+              </article>
+              <article class="service-card">
+                <strong>Photo, video, and drone coverage</strong>
+                <p>Photography, videography, and licensed drone coverage for ceremonies, portraits, beach moments, receptions, and family travel memories.</p>
+              </article>
+              <article class="service-card">
+                <strong>Flowers and design</strong>
+                <p>Florals, chuppah styling, tablescapes, signage, lighting, and island-inspired event details that still feel refined.</p>
+              </article>
+              <article class="service-card">
+                <strong>Guest logistics</strong>
+                <p>Airport transfers, island transportation, group movements, accessibility considerations, and accommodation coordination.</p>
+              </article>
+              <article class="service-card">
+                <strong>Ready to help</strong>
+                <p>Our staff is available for the duration of your visit and mitzvah and will ensure everything runs smoothly and according to plan.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alt" id="locations">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Locations</p>
+                <h2>Beach, garden, cliff, and heritage settings.</h2>
+              </div>
+              <p>
+                Barbados offers more than one kind of backdrop: calm west and south
+                coast beaches, windswept Atlantic cliffs, beautiful tropical gardens,
+                historic plantation houses, private villas, hotels, restaurants, and
+                heritage sites that can shape a full destination weekend.
+              </p>
+            </div>
+            <div class="highlight-grid">
+              <article class="highlight-card">
+                <strong>Jewish heritage sites</strong>
+                <p>Nidhe Israel, Swan Street, Bridgetown, and Speightstown woven into an itinerary for interested families.</p>
+              </article>
+              <article class="highlight-card">
+                <strong>Beaches and bays</strong>
+                <p>Welcome parties, ceremonies, photos, and relaxed receptions along calm, guest-friendly stretches of sand.</p>
+              </article>
+              <article class="highlight-card">
+                <strong>Windswept cliffs</strong>
+                <p>North and east coast viewpoints, dramatic Atlantic scenery, and rugged locations for portraits or day trips.</p>
+              </article>
+              <article class="highlight-card">
+                <strong>Beautiful gardens</strong>
+                <p>Lush tropical settings such as Hunte's Gardens for intimate gatherings, portraits, and quieter family moments.</p>
+              </article>
+              <article class="highlight-card">
+                <strong>Historic great houses</strong>
+                <p>Plantation-era homes and heritage properties for dinners, tours, and reflective cultural context.</p>
+              </article>
+              <article class="highlight-card">
+                <strong>Hotels, villas, and restaurants</strong>
+                <p>Venue scouting for welcome events, Shabbat meals, receptions, after-parties, and guest-friendly home bases.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="jewish-tourism">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Jewish Tourism</p>
+                <h2>Follow the island's Jewish story.</h2>
+              </div>
+              <p>
+                Barbados's Jewish history reaches back to the 1600s, tied to
+                Sephardic migration, trade, sugar, Bridgetown, Speightstown, and the
+                restored synagogue district. We can help families build a meaningful
+                Jewish heritage itinerary around the celebration weekend.
+              </p>
+            </div>
+            <div class="tourism-grid">
+              <article class="tourism-card">
+                <strong>Swan Street, once Jew's Street</strong>
+                <p>Walk the Bridgetown street associated with Jewish merchants whose shops and homes shaped the city's commercial life.</p>
+              </article>
+              <article class="tourism-card">
+                <strong>Nidhe Israel Historic District</strong>
+                <p>Visit the synagogue, mikvah, cemetery, museum, and archives for the clearest introduction to Jewish Barbados.</p>
+              </article>
+              <article class="tourism-card">
+                <strong>Speightstown</strong>
+                <p>Explore the northwestern town connected to a smaller early Jewish congregation and pair it with galleries, lunch, and the coast.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section cta" id="contact">
+          <div class="container cta-grid">
+            <div>
+              <p class="eyebrow">Begin with a conversation</p>
+              <h2>Tell us what you are imagining.</h2>
+              <p>
+                Share the event type, ideal dates, approximate guest count, and any Jewish
+                ritual or catering needs. We will help map the Barbados possibilities.
+              </p>
+            </div>
+            <a class="button" href="mailto:info@islandmitzvah.com">info@islandmitzvah.com</a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer-grid">
+          <span>© 2026 Island Mitzvah Co. Barbados destination Jewish event planning.</span>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
