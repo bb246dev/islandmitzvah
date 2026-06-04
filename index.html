@@ -682,6 +682,22 @@
         color: var(--white);
       }
 
+      .social-links {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-weight: 700;
+      }
+
+      .social-links a {
+        text-decoration: none;
+      }
+
+      .social-links a:hover,
+      .social-links a:focus-visible {
+        color: var(--gold);
+      }
+
       @media (max-width: 920px) {
         .section-head,
         .story-grid,
@@ -1067,6 +1083,10 @@
       <footer class="footer">
         <div class="container footer-grid">
           <span>© 2026 Island Mitzvah Co. Barbados destination Jewish event planning.</span>
+          <div class="social-links" aria-label="Social media links">
+            <a href="https://www.instagram.com/islandmitzvah/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=61590528634896" target="_blank" rel="noopener">Facebook</a>
+          </div>
         </div>
       </footer>
     </div>
