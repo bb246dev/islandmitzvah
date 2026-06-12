@@ -1,0 +1,889 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Free Barbados Simcha Planning Guide | Island Mitzvah Co.</title>
+    <meta
+      name="description"
+      content="A printable Barbados simcha planning guide from Island Mitzvah Co. for families planning destination bar mitzvahs, bat mitzvahs, Jewish weddings, Shabbat gatherings, and lifecycle celebrations."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Instrument+Sans:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --logo-background: #f6f3ee;
+        --ink: #063f4b;
+        --teal: #0d5964;
+        --sea: #2f7f86;
+        --coral: #c86f4a;
+        --gold: #d4a650;
+        --paper: #fffaf2;
+        --white: #ffffff;
+        --muted: rgba(6, 63, 75, 0.72);
+        --line: rgba(6, 63, 75, 0.16);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--logo-background);
+        color: var(--ink);
+        font-family: "Instrument Sans", Arial, Helvetica, sans-serif;
+        line-height: 1.55;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .page {
+        width: min(100%, 980px);
+        margin: 0 auto;
+        background: var(--paper);
+      }
+
+      .cover {
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        background: var(--logo-background);
+        position: relative;
+      }
+
+      .cover-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem clamp(1.2rem, 5vw, 3.2rem);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand-mark {
+        width: 148px;
+        height: 82px;
+        overflow: hidden;
+      }
+
+      .brand-mark img {
+        width: 148px;
+        max-width: none;
+      }
+
+      .contact {
+        color: var(--teal);
+        font-size: 0.84rem;
+        font-weight: 800;
+        text-align: right;
+      }
+
+      .cover-main {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.88fr);
+        align-items: stretch;
+        min-height: 680px;
+      }
+
+      .cover-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(2rem, 6vw, 4.2rem);
+      }
+
+      .cover-print-logo {
+        display: none;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        margin: 0 0 1.1rem;
+        color: var(--coral);
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 42px;
+        height: 2px;
+        background: var(--gold);
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-weight: 600;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        max-width: 10ch;
+        font-size: clamp(3.4rem, 7.6vw, 6.9rem);
+        line-height: 0.92;
+      }
+
+      .cover-lead {
+        max-width: 33rem;
+        margin: 1.45rem 0 0;
+        color: rgba(6, 63, 75, 0.82);
+        font-size: clamp(1.05rem, 2vw, 1.32rem);
+        font-weight: 600;
+      }
+
+      .cover-photo {
+        min-height: 100%;
+      }
+
+      .cover-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 64% center;
+      }
+
+      .cover-bottom {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 1px solid var(--line);
+      }
+
+      .cover-note {
+        min-height: 118px;
+        padding: 1.1rem clamp(1rem, 3vw, 1.8rem);
+        border-right: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .cover-note:last-child {
+        border-right: 0;
+      }
+
+      .cover-note strong {
+        display: block;
+        margin-bottom: 0.3rem;
+        color: var(--ink);
+        font-size: 0.9rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .section {
+        padding: clamp(2.4rem, 5vw, 4.6rem) clamp(1.2rem, 5vw, 3.2rem);
+        border-top: 1px solid var(--line);
+      }
+
+      .section-grid {
+        display: grid;
+        grid-template-columns: minmax(230px, 0.44fr) minmax(0, 1fr);
+        gap: clamp(1.8rem, 5vw, 4rem);
+        align-items: start;
+      }
+
+      h2 {
+        max-width: 10ch;
+        color: rgba(6, 63, 75, 0.86);
+        font-family: "Cormorant Garamond", "Newsreader", Georgia, serif;
+        font-size: clamp(2.8rem, 6vw, 5.2rem);
+        font-style: italic;
+        line-height: 0.92;
+      }
+
+      h3 {
+        font-size: clamp(1.35rem, 2vw, 1.8rem);
+        line-height: 1.1;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .section-intro {
+        max-width: 43rem;
+        color: var(--muted);
+        font-size: 1.03rem;
+      }
+
+      .cards,
+      .two-col,
+      .checklist {
+        display: grid;
+        gap: 0.9rem;
+        margin-top: 1.4rem;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .card,
+      .check-card,
+      .day {
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.66);
+        padding: clamp(1.05rem, 2vw, 1.45rem);
+      }
+
+      .card {
+        border-top: 5px solid var(--sea);
+      }
+
+      .card:nth-child(2n) {
+        border-top-color: var(--gold);
+      }
+
+      .card:nth-child(3n) {
+        border-top-color: var(--coral);
+      }
+
+      .card p,
+      .day p {
+        margin-top: 0.55rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .day-plan {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        border: 1px solid var(--line);
+        margin-top: 1.4rem;
+      }
+
+      .day-plan.day-plan-three .day:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .day {
+        min-height: 210px;
+        border: 0;
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .day:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .day:nth-last-child(-n + 2) {
+        border-bottom: 0;
+      }
+
+      .day strong,
+      .mini-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--coral);
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .image-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.9rem;
+        margin-top: 1.4rem;
+      }
+
+      .image-row figure {
+        margin: 0;
+        min-height: 250px;
+        overflow: hidden;
+      }
+
+      .image-row img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+        margin-top: 1.4rem;
+      }
+
+      .feature-pair {
+        break-inside: avoid;
+      }
+
+      .feature-pair figure {
+        margin: 0;
+        min-height: 200px;
+        overflow: hidden;
+      }
+
+      .feature-pair img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .feature-pair .card {
+        margin-top: 0.9rem;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      li {
+        position: relative;
+        margin-top: 0.72rem;
+        padding-left: 1.55rem;
+        color: var(--muted);
+      }
+
+      li::before {
+        content: "";
+        position: absolute;
+        top: 0.55rem;
+        left: 0;
+        width: 0.5rem;
+        height: 0.5rem;
+        background: var(--coral);
+      }
+
+      .checklist {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .prompt-box {
+        margin-top: 1.4rem;
+        padding: clamp(1.25rem, 3vw, 2rem);
+        background: var(--ink);
+        color: var(--white);
+      }
+
+      .prompt-box h3 {
+        color: var(--white);
+      }
+
+      .prompt-box p,
+      .prompt-box li {
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .prompt-box li::before {
+        background: var(--gold);
+      }
+
+      .email-cta {
+        margin-top: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .email-cta p {
+        color: rgba(255, 255, 255, 0.86);
+      }
+
+      .email-link {
+        display: inline-block;
+        margin-top: 0.75rem;
+        padding: 0.75rem 1.1rem;
+        background: var(--white);
+        color: var(--ink);
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .footer {
+        padding: 2rem clamp(1.2rem, 5vw, 3.2rem);
+        background: #042f38;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.86rem;
+      }
+
+      .footer strong {
+        color: var(--white);
+      }
+
+      @media print {
+        @page {
+          margin: 0.45in;
+          size: letter;
+        }
+
+        body {
+          background: var(--white);
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        .page {
+          width: 100%;
+        }
+
+        .cover,
+        .section {
+          break-inside: avoid;
+        }
+
+        .cover {
+          break-after: page;
+          height: 10.1in;
+          min-height: 0;
+          overflow: hidden;
+        }
+
+        .cover-top {
+          padding: 0.35in 0.4in 0.22in;
+        }
+
+        .brand-mark {
+          width: 1.45in;
+          height: 0.8in;
+        }
+
+        .brand-mark img {
+          width: 1.45in;
+        }
+
+        .cover-main {
+          grid-template-columns: 0.95fr 0.88fr;
+          min-height: 0;
+          height: 7.45in;
+        }
+
+        .cover-copy {
+          padding: 0.4in;
+        }
+
+        h1 {
+          font-size: 58pt;
+        }
+
+        .cover-lead {
+          font-size: 12.5pt;
+        }
+
+        .cover-bottom {
+          height: 1.28in;
+        }
+
+        .cover-note {
+          min-height: 0;
+          padding: 0.16in 0.2in;
+          font-size: 8.5pt;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .cover-main,
+        .section-grid,
+        .cover-bottom,
+        .cards,
+        .day-plan,
+        .image-row,
+        .checklist {
+          grid-template-columns: 1fr;
+        }
+
+        .cover-photo {
+          min-height: 360px;
+        }
+
+        .cover-note,
+        .day {
+          border-right: 0;
+        }
+
+        .day:nth-last-child(-n + 2) {
+          border-bottom: 1px solid var(--line);
+        }
+      }
+
+      @media print {
+        .cover {
+          display: grid;
+          grid-template-rows: 1fr;
+          height: 10.1in;
+          min-height: 0;
+          overflow: hidden;
+        }
+
+        .cover-top,
+        .cover-bottom,
+        .footer {
+          display: none;
+        }
+
+        .cover-print-logo {
+          display: block;
+          position: absolute;
+          top: 0.28in;
+          left: 0.35in;
+          width: 1.42in;
+        }
+
+        .cover-main {
+          display: grid;
+          grid-template-columns: 0.92fr 1fr;
+          min-height: 0;
+          height: 100%;
+          align-items: center;
+        }
+
+        .cover-copy {
+          padding: 0.6in 0.35in;
+        }
+
+        h1 {
+          font-size: 50pt;
+          line-height: 0.92;
+        }
+
+        .cover-lead {
+          font-size: 11.5pt;
+          line-height: 1.45;
+        }
+
+        .cover-photo {
+          min-height: 0;
+          height: calc(100% - 40px);
+          align-self: center;
+        }
+
+        .cover-photo img {
+          object-position: 27% center;
+        }
+
+        .section.page-break-before {
+          break-before: page;
+        }
+
+        .section.section-tight {
+          padding-top: 0.35in;
+          padding-bottom: 0.35in;
+        }
+
+        .day-plan.day-plan-compact .day {
+          min-height: 175px;
+        }
+
+        .day-plan.day-plan-compact.day-plan-three .day {
+          min-height: 145px;
+        }
+
+        .feature-grid {
+          gap: 0.7rem;
+        }
+
+        .feature-pair figure {
+          min-height: 160px;
+        }
+
+        .feature-pair .card {
+          margin-top: 0.6rem;
+        }
+
+        .check-card li:last-child {
+          margin-bottom: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="page">
+      <section class="cover">
+        <img class="cover-print-logo" src="working-logo-clean.png" alt="Island Mitzvah Co. logo">
+        <header class="cover-top">
+          <div class="brand-mark" aria-label="Island Mitzvah Co.">
+            <img src="working-logo-clean.png" alt="">
+          </div>
+          <p class="contact">info@islandmitzvah.com</p>
+        </header>
+
+        <div class="cover-main">
+          <div class="cover-copy">
+            <p class="eyebrow">Free Event Planning Guide</p>
+            <h1>Barbados Simcha Guide</h1>
+            <p class="cover-lead">
+              Start here for the ins and outs of hosting a destination bar
+              mitzvah, bat mitzvah, Jewish wedding, shabbat gathering, or
+              lifecycle event in Barbados.
+            </p>
+          </div>
+          <figure class="cover-photo">
+            <img src="assets/optimized/palm-ocean-simcha-guide-pdf.jpg" alt="Palm tree overlooking bright Barbados ocean water">
+          </figure>
+        </div>
+
+        <div class="cover-bottom">
+          <p class="cover-note"><strong>Plan The Visit</strong> Think through arrivals, Shabbat, the main event, downtime, and departure logistics.</p>
+          <p class="cover-note"><strong>Care For Guests</strong> Give family and friends a weekend that feels hosted, warm, and easy to navigate.</p>
+          <p class="cover-note"><strong>Use The Island</strong> Include beaches, heritage time, local meals, and Jewish history without overpacking the schedule.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-grid">
+          <div>
+            <p class="eyebrow">How To Use This</p>
+            <h2>Start with the big picture.</h2>
+          </div>
+          <div>
+            <p class="section-intro">
+              A Barbados simcha is more than one ceremony or party. It is a
+              destination experience: travel, family, Jewish rhythm, island
+              time, the main event, and a smooth departure. Use this guide to
+              begin crafting what the visit should feel like before making any
+              decision.
+            </p>
+            <div class="cards">
+              <article class="card">
+                <h3>Guest arrival</h3>
+                <p>Airport transfers, welcome bags, room blocks, villas, family-friendly timing, and first-night welcomes.</p>
+              </article>
+              <article class="card">
+                <h3>Jewish rhythm</h3>
+                <p>Shabbat dinner, Havdalah, rabbi or officiant conversations, Nidhe Israel visits, Jewish-themed tours, and mikvah visits.</p>
+              </article>
+              <article class="card">
+                <h3>Island moments</h3>
+                <p>Beach mornings, Holetown, Speightstown, east coast drives, exploring nature, and room for guests to breathe.</p>
+              </article>
+              <article class="card">
+                <h3>Main event</h3>
+                <p>Venue scouting, catering, music, flowers, photography, transportation, and day-of event coordination.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-grid">
+          <div>
+            <p class="eyebrow">Sample Plan</p>
+            <h2>A visit that feels hosted, not hurried.</h2>
+          </div>
+          <div>
+            <p class="section-intro">
+              Every family is different, but a good destination simcha
+              balances structure with spontaneity. Guests should know where they
+              are and where to be but never feel rushed to get there.
+            </p>
+            <div class="day-plan day-plan-compact day-plan-three">
+              <article class="day">
+                <strong>Thursday</strong>
+                <h3>Arrivals</h3>
+                <p>Airport transfers, welcome bags, sunset drinks, and an easy welcome dinner for early arrivals.</p>
+              </article>
+              <article class="day">
+                <strong>Friday</strong>
+                <h3>Island + Shabbat</h3>
+                <p>Beach time, a heritage visit, room to rest, and a Shabbat-style dinner for family and friends.</p>
+              </article>
+              <article class="day">
+                <strong>Saturday</strong>
+                <h3>Meaning + rest</h3>
+                <p>A quieter morning, ocean time, Shabbat service, Havdalah, or a relaxed family gathering depending on your rhythm.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tight page-break-before">
+        <div class="section-grid">
+          <div>
+            <p class="eyebrow">Sample Plan Cont.</p>
+            <h2>A visit that feels hosted, not hurried.</h2>
+          </div>
+          <div>
+            <div class="day-plan day-plan-compact">
+              <article class="day">
+                <strong>Sunday</strong>
+                <h3>Main event</h3>
+                <p>Ceremony, portraits, reception, music, dancing, transportation, and managing the flow of the day.</p>
+              </article>
+              <article class="day">
+                <strong>Monday</strong>
+                <h3>One more memory</h3>
+                <p>Brunch, beach, nature, Holetown, Speightstown, souvenir shopping, or a final family outing before departures.</p>
+              </article>
+              <article class="day">
+                <strong>Tuesday</strong>
+                <h3>Departure details</h3>
+                <p>Airport transfers, luggage timing, checkout coordination, and a smooth sendoff for guests heading home.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tight">
+        <div class="section-grid">
+          <div>
+            <p class="eyebrow">Barbados + Heritage</p>
+            <h2>Let Barbados<br>become part of<br>the simcha.</h2>
+          </div>
+          <div>
+            <p class="section-intro">
+              Barbados gives families a rare combination of beaches and
+              convenience plus one of the oldest Jewish synagogues in the
+              Americas.
+            </p>
+            <div class="feature-grid">
+              <div class="feature-pair">
+                <figure>
+                  <img src="nidhe-israel-synagogue.jpg" alt="Nidhe Israel Synagogue exterior">
+                </figure>
+                <article class="card">
+                  <h3>Nidhe Israel</h3>
+                  <p>Visit the Nidhe Israel synagogue and mikvah, arrange heritage tours and explore Barbados's Jewish life.</p>
+                </article>
+              </div>
+              <div class="feature-pair">
+                <figure>
+                  <img src="social/barbados-image-candidates-2026-06-10/beach-umbrella-simcha-guide.jpg" alt="Beach umbrella and turquoise water in Barbados">
+                </figure>
+                <article class="card">
+                  <h3>Island downtime</h3>
+                  <p>Build in beach time, local food, quiet mornings, and opportunity for guests to feel the Barbadian island vibe.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-grid">
+          <div>
+            <p class="eyebrow">Planning Questions</p>
+            <h2>Easy<br>decisions<br>to start.</h2>
+          </div>
+          <div>
+            <p class="section-intro">
+              This guide turns the big unknowns into a manageable opening
+              conversation. Think of these questions and the goals for your
+              Barbadian simcha.
+            </p>
+            <div class="cards">
+              <article class="card">
+                <h3>Family + Event</h3>
+                <ul>
+                  <li>What type of simcha are you imagining?</li>
+                  <li>What date range or season feels likely?</li>
+                  <li>Anticipated number of guests?</li>
+                  <li>Who needs extra support: children, grandparents, guests with accessibility needs?</li>
+                </ul>
+              </article>
+              <article class="card">
+                <h3>Place + Rhythm</h3>
+                <ul>
+                  <li>Do you want a synagogue, beach, villa, garden, hotel, restaurant, or hybrid setting?</li>
+                  <li>How much Jewish heritage and Shabbat should be part of the visit?</li>
+                  <li>Will most guests stay together or across multiple properties?</li>
+                  <li>How formal or relaxed should the main event feel?</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-grid">
+          <div>
+            <p class="eyebrow">Checklist Preview</p>
+            <h2>Details make the visit feel easy.</h2>
+          </div>
+          <div>
+            <p class="section-intro">
+              A destination mitzvah works best when guests arrive and details
+              are organized in advance. These are the details Island Mitzvah
+              can help organize with you.
+            </p>
+            <div class="checklist">
+              <article class="check-card">
+                <h3>Guest Care</h3>
+                <ul>
+                  <li>Airport arrivals and transfers</li>
+                  <li>Hotel, villa, and room-block conversations</li>
+                  <li>Welcome bags and arrival notes</li>
+                  <li>Transportation between events</li>
+                </ul>
+              </article>
+              <article class="check-card">
+                <h3>Jewish Needs</h3>
+                <ul>
+                  <li>Rabbi or officiant sourcing conversations</li>
+                  <li>Friday night or Saturday morning services</li>
+                  <li>Heritage visits and Barbadian Jewish history</li>
+                  <li>Kosher or kosher-style menu coordination</li>
+                </ul>
+              </article>
+              <article class="check-card">
+                <h3>Celebration Details</h3>
+                <ul>
+                  <li>Venue scouting and timing</li>
+                  <li>Photography, video, and drone coverage</li>
+                  <li>Music, flowers, signage, and tables</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-grid">
+          <div>
+            <p class="eyebrow">Next Step</p>
+            <h2>Send us a few basics.</h2>
+          </div>
+          <div>
+            <p class="section-intro">
+              If the beautiful paradise of Barbados feels like the right
+              destination, send us the below details and lets start crafting a
+              customized plan for your island simcha
+            </p>
+            <div class="prompt-box">
+              <h3>Reply with:</h3>
+              <ul>
+                  <li>Your simcha type and approximate dates</li>
+                <li>Estimated guest count</li>
+                <li>Where guests may be traveling from</li>
+                <li>Whether you are imagining synagogue, beach, villa, hotel, restaurant, or a mix</li>
+                  <li>Anything Jewish, logistical or family priorities</li>
+              </ul>
+              <div class="email-cta">
+                <p>info@islandmitzvah.com</p>
+                <a class="email-link" href="mailto:info@islandmitzvah.com?subject=Island%20Mitzvah%20Guide%20Inquiry">Email Island Mitzvah Co.</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p><strong>Island Mitzvah Co.</strong> Barbados destination Jewish event planning.</p>
+        <p>info@islandmitzvah.com</p>
+      </footer>
+    </article>
+  </body>
+</html>
