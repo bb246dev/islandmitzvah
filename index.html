@@ -88,6 +88,78 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can I host a bar or bat mitzvah in Barbados?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Barbados can work beautifully for a destination bar or bat mitzvah, especially when the celebration is planned as a full family experience rather than just a ceremony or party. Island Mitzvah can help think through the Jewish elements, guest logistics, beach time, meals, transportation, photography, and the overall flow of the visit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I plan a Jewish wedding in Barbados?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. A Jewish wedding in Barbados can include a chuppah, rabbi or officiant sourcing, welcome events, Shabbat-style meals, beach or garden settings, photography, music, guest transportation, and design details. Island Mitzvah helps families connect the celebration itself with the destination experience around it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there Jewish history in Barbados?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Barbados has one of the oldest Jewish stories in the Americas. Families can visit the Nidhe Israel Synagogue and mikvah, explore Barbadian Jewish history, and include heritage tours as part of a destination simcha or Jewish travel itinerary."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can guests visit Nidhe Israel Synagogue?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In many cases, yes. Families interested in Jewish heritage can include Nidhe Israel Synagogue, the mikvah, the cemetery, and the surrounding historic district in their itinerary. Island Mitzvah can help think through timing, context, and facilitate scheduling a visit to this national treasure."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do we need to plan the full weekend?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not always. Some families need help with a few specific details, while others want a full visit planned from airport arrivals through departure. Island Mitzvah can support a single planning conversation, local details, guest logistics, heritage elements, or full simcha planning."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What kinds of locations work for a Barbados simcha?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Families can consider beaches, villas, gardens, hotels, restaurants, historic spaces, synagogue-related visits, and private event settings. The right choice depends on the simcha type, guest count, mobility needs, weather planning, and how formal or relaxed the celebration should feel."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How early should we start planning?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The earlier the better, especially if guests will travel from abroad or the family wants specific villas, hotels, vendors, or holiday-week timing. A good first step is to gather approximate dates, guest count, simcha type, and the parts of the visit that matter most to the family."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Island Mitzvah help with guest travel and logistics?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Island Mitzvah can help families think through airport arrivals, transportation between events, hotel or villa conversations, welcome bags, accessibility needs, and departure timing so guests feel cared for throughout the visit."
+            }
+          }
+        ]
+      }
+    </script>
     <style>
       :root {
         --logo-background: #f6f3ee;
@@ -459,7 +531,8 @@
       .event-grid,
       .service-grid,
       .tourism-grid,
-      .highlight-grid {
+      .highlight-grid,
+      .faq-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1rem;
@@ -468,7 +541,8 @@
       .event-card,
       .service-card,
       .tourism-card,
-      .highlight-card {
+      .highlight-card,
+      .faq-card {
         min-height: 100%;
         padding: clamp(1.2rem, 2.3vw, 1.6rem);
         background: rgba(255, 255, 255, 0.64);
@@ -490,18 +564,55 @@
       .event-card p,
       .service-card p,
       .tourism-card p,
-      .highlight-card p {
+      .highlight-card p,
+      .faq-card p {
         margin: 0.8rem 0 0;
         color: var(--muted);
       }
 
       .service-card strong,
       .tourism-card strong,
-      .highlight-card strong {
+      .highlight-card strong,
+      .faq-card strong {
         display: block;
         margin-bottom: 0.5rem;
         color: var(--ink);
         font-size: 1rem;
+      }
+
+      .faq-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .faq-card {
+        border-top: 4px solid var(--gold);
+      }
+
+      .faq-card:nth-child(3n + 2) {
+        border-top-color: var(--sea);
+      }
+
+      .faq-card:nth-child(3n) {
+        border-top-color: var(--coral);
+      }
+
+      .faq-cta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-top: 1rem;
+        padding: clamp(1.2rem, 2.3vw, 1.6rem);
+        background: var(--white);
+        border: 1px solid var(--line);
+      }
+
+      .faq-cta p {
+        margin: 0;
+        color: rgba(6, 63, 75, 0.84);
+        font-size: 1.05rem;
+        font-weight: 700;
       }
 
       .story-grid {
@@ -729,6 +840,7 @@
         .service-grid,
         .tourism-grid,
         .highlight-grid,
+        .faq-grid,
         .process {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
@@ -854,9 +966,14 @@
         .service-grid,
         .tourism-grid,
         .highlight-grid,
+        .faq-grid,
         .process,
         .photo-grid {
           grid-template-columns: 1fr;
+        }
+
+        .faq-cta .button {
+          width: 100%;
         }
 
         .photo-grid figure:first-child {
@@ -1081,6 +1198,107 @@
                 <strong>Speightstown</strong>
                 <p>Explore the northwestern town connected to a smaller early Jewish congregation and pair it with galleries, lunch, and the coast.</p>
               </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alt" id="planning-faq">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Planning FAQ</p>
+                <h2>Questions families ask first.</h2>
+              </div>
+              <p>
+                Planning a Jewish destination event in Barbados usually starts with a
+                few practical questions: where the Jewish pieces fit, how guests will
+                move around the island, what kind of setting feels right, and how much
+                help the family needs from afar. These answers give families a clearer
+                starting point before dates, venues, and vendors are finalized.
+              </p>
+            </div>
+            <div class="faq-grid">
+              <article class="faq-card">
+                <strong>Can I host a bar or bat mitzvah in Barbados?</strong>
+                <p>
+                  Yes. Barbados can work beautifully for a destination bar or bat
+                  mitzvah, especially when the celebration is planned as a full family
+                  experience rather than just a ceremony or party. Island Mitzvah can
+                  help think through the Jewish elements, guest logistics, beach time,
+                  meals, transportation, photography, and the overall flow of the visit.
+                </p>
+              </article>
+              <article class="faq-card">
+                <strong>Can I plan a Jewish wedding in Barbados?</strong>
+                <p>
+                  Yes. A Jewish wedding in Barbados can include a chuppah, rabbi or
+                  officiant sourcing, welcome events, Shabbat-style meals, beach or
+                  garden settings, photography, music, guest transportation, and design
+                  details. Island Mitzvah helps families connect the celebration itself
+                  with the destination experience around it.
+                </p>
+              </article>
+              <article class="faq-card">
+                <strong>Is there Jewish history in Barbados?</strong>
+                <p>
+                  Yes. Barbados has one of the oldest Jewish stories in the Americas.
+                  Families can visit the Nidhe Israel Synagogue and mikvah, explore
+                  Barbadian Jewish history, and include heritage tours as part of a
+                  destination simcha or Jewish travel itinerary.
+                </p>
+              </article>
+              <article class="faq-card">
+                <strong>Can guests visit Nidhe Israel Synagogue?</strong>
+                <p>
+                  In many cases, yes. Families interested in Jewish heritage can include
+                  Nidhe Israel Synagogue, the mikvah, the cemetery, and the surrounding
+                  historic district in their itinerary. Island Mitzvah can help think
+                  through timing, context, and facilitate scheduling a visit to this
+                  national treasure.
+                </p>
+              </article>
+              <article class="faq-card">
+                <strong>Do we need to plan the full weekend?</strong>
+                <p>
+                  Not always. Some families need help with a few specific details, while
+                  others want a full visit planned from airport arrivals through
+                  departure. Island Mitzvah can support a single planning conversation,
+                  local details, guest logistics, heritage elements, or full simcha
+                  planning.
+                </p>
+              </article>
+              <article class="faq-card">
+                <strong>What kinds of locations work for a Barbados simcha?</strong>
+                <p>
+                  Families can consider beaches, villas, gardens, hotels, restaurants,
+                  historic spaces, synagogue-related visits, and private event settings.
+                  The right choice depends on the simcha type, guest count, mobility
+                  needs, weather planning, and how formal or relaxed the celebration
+                  should feel.
+                </p>
+              </article>
+              <article class="faq-card">
+                <strong>How early should we start planning?</strong>
+                <p>
+                  The earlier the better, especially if guests will travel from abroad
+                  or the family wants specific villas, hotels, vendors, or holiday-week
+                  timing. A good first step is to gather approximate dates, guest count,
+                  simcha type, and the parts of the visit that matter most to the family.
+                </p>
+              </article>
+              <article class="faq-card">
+                <strong>Can Island Mitzvah help with guest travel and logistics?</strong>
+                <p>
+                  Yes. Island Mitzvah can help families think through airport arrivals,
+                  transportation between events, hotel or villa conversations, welcome
+                  bags, accessibility needs, and departure timing so guests feel cared
+                  for throughout the visit.
+                </p>
+              </article>
+            </div>
+            <div class="faq-cta">
+              <p>Ready to explore a simcha in Barbados?</p>
+              <a class="button" href="simcha-guide.html">Free Simcha Planning Guide</a>
             </div>
           </div>
         </section>
