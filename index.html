@@ -295,6 +295,67 @@
         color: var(--coral);
       }
 
+      .mobile-menu {
+        display: none;
+      }
+
+      .mobile-menu summary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        min-height: 44px;
+        padding: 0.65rem 0.85rem;
+        border: 1px solid var(--ink);
+        background: var(--white);
+        color: var(--ink);
+        cursor: pointer;
+        font-weight: 800;
+        line-height: 1;
+        list-style: none;
+      }
+
+      .mobile-menu summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .menu-icon {
+        display: grid;
+        gap: 4px;
+        width: 18px;
+      }
+
+      .menu-icon span {
+        display: block;
+        height: 2px;
+        background: currentColor;
+      }
+
+      .mobile-menu-panel {
+        display: grid;
+        gap: 0.4rem;
+      }
+
+      .mobile-menu-panel a {
+        padding: 0.85rem 0.9rem;
+        border: 1px solid var(--line);
+        background: var(--white);
+        color: var(--ink);
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .mobile-menu-panel a:not(.button):hover,
+      .mobile-menu-panel a:not(.button):focus-visible {
+        color: var(--coral);
+      }
+
+      .mobile-menu-panel .button {
+        width: 100%;
+        border-color: var(--ink);
+        background: var(--ink);
+        color: var(--white);
+      }
+
       .button {
         display: inline-flex;
         align-items: center;
@@ -847,21 +908,37 @@
       }
 
       @media (max-width: 760px) {
+        .topbar .container {
+          width: calc(100% - 28px);
+        }
+
         .nav {
-          align-items: flex-start;
-          flex-direction: column;
-          padding: 1rem 0;
+          position: relative;
+          align-items: center;
+          flex-direction: row;
+          padding: 0.75rem 0;
+          min-height: auto;
         }
 
         .nav-links {
-          width: 100%;
-          flex-wrap: wrap;
-          gap: 0.9rem 1.2rem;
-          font-size: 0.9rem;
+          display: none;
         }
 
-        .nav-links .button {
-          width: auto;
+        .mobile-menu {
+          display: block;
+          flex: 0 0 auto;
+        }
+
+        .mobile-menu-panel {
+          position: absolute;
+          top: calc(100% + 0.55rem);
+          right: 0;
+          left: 0;
+          z-index: 20;
+          padding: 0.75rem;
+          border: 1px solid var(--line);
+          background: rgba(246, 243, 238, 0.98);
+          box-shadow: var(--shadow);
         }
       }
 
@@ -917,23 +994,8 @@
           width: 230px;
         }
 
-        .nav-links {
-          display: grid;
-          width: 100%;
-          max-width: 100%;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 0.65rem;
-          font-size: 0.78rem;
-          justify-items: center;
-        }
-
-        .nav-links .button {
-          grid-column: 1 / -1;
-          width: 100%;
-        }
-
-        .nav-links a:not(.button) {
-          text-align: center;
+        .mobile-menu summary {
+          padding-inline: 0.75rem;
         }
 
         h1 {
@@ -1004,6 +1066,20 @@
             <a href="mailto:info@islandmitzvah.com?subject=Mitzvah%20in%20Paradise">Contact</a>
             <a class="button" href="simcha-guide.html">Free Simcha Planning Guide</a>
           </div>
+          <details class="mobile-menu">
+            <summary aria-label="Open navigation menu">
+              <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+              <span>Menu</span>
+            </summary>
+            <div class="mobile-menu-panel">
+              <a href="#celebrations">Celebrations</a>
+              <a href="#services">Services</a>
+              <a href="#locations">Locations</a>
+              <a href="#jewish-tourism">Jewish Tourism</a>
+              <a href="mailto:info@islandmitzvah.com?subject=Mitzvah%20in%20Paradise">Contact</a>
+              <a class="button" href="simcha-guide.html">Free Simcha Planning Guide</a>
+            </div>
+          </details>
         </nav>
       </header>
 
@@ -1332,5 +1408,12 @@
         </div>
       </footer>
     </div>
+    <script>
+      document.querySelectorAll(".mobile-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          link.closest(".mobile-menu").open = false;
+        });
+      });
+    </script>
   </body>
 </html>
