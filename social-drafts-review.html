@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Island Mitzvah Social Drafts Review</title>
+    <style>
+      :root {
+        --logo-background: #f6f3ee;
+        --ink: #063f4b;
+        --teal: #0d5964;
+        --sea: #2f7f86;
+        --coral: #c86f4a;
+        --gold: #d4a650;
+        --paper: #fffaf2;
+        --white: #ffffff;
+        --muted: #4f7379;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--logo-background);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      main {
+        width: min(1400px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 42px 0 72px;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(44px, 6vw, 76px);
+        line-height: 0.98;
+      }
+
+      .intro {
+        max-width: 980px;
+        margin: 18px 0 34px;
+        color: var(--muted);
+        font-size: 22px;
+        line-height: 1.45;
+      }
+
+      .review-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
+      }
+
+      .review-card {
+        background: #fffaf2;
+        border: 1px solid rgba(6, 63, 75, 0.15);
+        border-top: 8px solid var(--gold);
+        padding: 18px;
+      }
+
+      .review-card:nth-child(3n + 2) {
+        border-top-color: var(--sea);
+      }
+
+      .review-card:nth-child(3n) {
+        border-top-color: var(--coral);
+      }
+
+      .post-frame {
+        width: 100%;
+        aspect-ratio: 1;
+        overflow: hidden;
+        background: #e7dfd1;
+      }
+
+      .post {
+        position: relative;
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--logo-background);
+        transform: scale(var(--scale));
+        transform-origin: top left;
+      }
+
+      .photo {
+        position: absolute;
+        inset: 0;
+        background-image: var(--image);
+        background-position: var(--position, center);
+        background-size: cover;
+        transform: scale(var(--zoom, 1));
+      }
+
+      .wash {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(246, 243, 238, 0.94) 0%, rgba(246, 243, 238, 0.78) 38%, rgba(246, 243, 238, 0.1) 76%),
+          linear-gradient(180deg, rgba(6, 63, 75, 0.04), rgba(6, 63, 75, 0.16));
+      }
+
+      .post.alt .wash {
+        background:
+          linear-gradient(180deg, rgba(246, 243, 238, 0.12), rgba(246, 243, 238, 0.84)),
+          linear-gradient(90deg, rgba(6, 63, 75, 0.08), rgba(6, 63, 75, 0.02));
+      }
+
+      .post.bottom .wash {
+        background:
+          linear-gradient(180deg, rgba(6, 63, 75, 0.14), rgba(6, 63, 75, 0.02) 46%, rgba(246, 243, 238, 0.88)),
+          linear-gradient(90deg, rgba(246, 243, 238, 0.05), rgba(246, 243, 238, 0.46));
+      }
+
+      .brand {
+        position: absolute;
+        top: 42px;
+        left: 48px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 10px 16px 10px 12px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 18px 36px rgba(6, 63, 75, 0.14);
+      }
+
+      .brand img {
+        width: 58px;
+        height: 58px;
+        object-fit: contain;
+      }
+
+      .brand span {
+        font-size: 25px;
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .content {
+        position: absolute;
+        left: 58px;
+        right: 58px;
+        bottom: 58px;
+        max-width: 830px;
+      }
+
+      .post.alt .content,
+      .post.bottom .content {
+        top: 650px;
+        bottom: auto;
+        max-width: 880px;
+      }
+
+      .panel {
+        display: inline-block;
+        padding: 34px 38px 38px;
+        background: rgba(255, 250, 242, 0.96);
+        border-top: 8px solid var(--gold);
+        box-shadow: 0 22px 46px rgba(6, 63, 75, 0.16);
+      }
+
+      .alt .panel {
+        border-top-color: var(--sea);
+      }
+
+      .bottom .panel {
+        border-top-color: var(--coral);
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0 0 18px;
+        color: var(--coral);
+        font-size: 24px;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 52px;
+        height: 4px;
+        background: var(--gold);
+      }
+
+      .post h2 {
+        margin: 0;
+        max-width: 800px;
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: var(--headline-size, 74px);
+        font-weight: 700;
+        line-height: 0.96;
+        letter-spacing: 0;
+      }
+
+      .support {
+        margin: 22px 0 0;
+        max-width: 800px;
+        color: rgba(6, 63, 75, 0.86);
+        font-size: 31px;
+        font-weight: 800;
+        line-height: 1.18;
+      }
+
+      .tag {
+        position: absolute;
+        right: 48px;
+        top: 48px;
+        max-width: 295px;
+        padding: 20px 22px;
+        background: var(--ink);
+        color: var(--white);
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 1.12;
+      }
+
+      .caption {
+        padding: 22px 8px 4px;
+      }
+
+      .caption h2 {
+        margin: 0 0 14px;
+        font-size: 28px;
+      }
+
+      .caption p {
+        margin: 0 0 14px;
+        color: var(--muted);
+        font-size: 19px;
+        line-height: 1.45;
+      }
+
+      .hashtags {
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      @media (max-width: 920px) {
+        main {
+          width: min(100% - 28px, 680px);
+          padding-top: 28px;
+        }
+
+        .review-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Reviewed Social Drafts</h1>
+      <p class="intro">Six draft posts using only the remaining image candidates. These are for review only, not approved for scheduling yet.</p>
+
+      <section class="review-grid">
+        <article class="review-card">
+          <div class="post-frame">
+            <section class="post" style="--scale: calc((min(100vw, 650px) - 86px) / 1080); --image: url('review-images/image-01.jpg'); --position: center; --zoom: 1.14; --headline-size: 72px;">
+              <div class="photo"></div><div class="wash"></div>
+              <div class="brand"><img src="island-mitzvah-palm-vector-master-5000-transparent.png" alt=""><span>Island Mitzvah Co.</span></div>
+              <div class="content"><div class="panel"><p class="eyebrow">Island Breathing Room</p><h2>Let the visit have room to breathe</h2><p class="support">A Barbados simcha can include quiet mornings, nature, and space between the big moments</p></div></div>
+            </section>
+          </div>
+          <div class="caption">
+            <h2>Post 1 - Island Breathing Room</h2>
+            <p>A destination simcha doesn't need to feel packed from morning to night. Barbados gives families room for quiet mornings, nature, shared meals, beach time, and vacation vibes between the big moments.</p>
+            <p>Island Mitzvah helps families shape Barbados simchas with meaning and room to breathe.</p>
+            <p class="hashtags">#IslandMitzvah #Barbados #DestinationMitzvah #JewishFamilyTravel #JewishEvents #FamilyCelebration #CaribbeanTravel</p>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="post-frame">
+            <section class="post alt" style="--scale: calc((min(100vw, 650px) - 86px) / 1080); --image: url('review-images/image-04.jpg'); --position: center; --zoom: 1.12; --headline-size: 73px;">
+              <div class="photo"></div><div class="wash"></div>
+              <div class="brand"><img src="island-mitzvah-palm-vector-master-5000-transparent.png" alt=""><span>Island Mitzvah Co.</span></div>
+              <div class="content"><div class="panel"><p class="eyebrow">Ocean Time</p><h2>Build in the moments you remember</h2><p class="support">Beach time, snorkel time, and unhurried island days can make a simcha feel like a true family trip</p></div></div>
+            </section>
+          </div>
+          <div class="caption">
+            <h2>Post 2 - Ocean Time</h2>
+            <p>Some of the best moments happen between the planned ones. Ocean time, snorkel time, slow mornings, and room for everyone to settle into island life can make a Barbados simcha feel relaxed, joyful, and personal.</p>
+            <p>Island Mitzvah helps families craft the full visit, not just the main event.</p>
+            <p class="hashtags">#IslandMitzvah #BarbadosBeach #JewishFamilyTravel #DestinationMitzvah #MitzvahWeekend #FamilyTravel #CaribbeanEvents</p>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="post-frame">
+            <section class="post bottom" style="--scale: calc((min(100vw, 650px) - 86px) / 1080); --image: url('review-images/image-05.jpg'); --position: center; --zoom: 1.12; --headline-size: 70px;">
+              <div class="photo"></div><div class="wash"></div>
+              <div class="brand"><img src="island-mitzvah-palm-vector-master-5000-transparent.png" alt=""><span>Island Mitzvah Co.</span></div>
+              <div class="tag">Free Simcha Planning Guide</div>
+              <div class="content"><div class="panel"><p class="eyebrow">Start Here</p><h2>Plan the vibe before the bookings</h2><p class="support">Our guide helps families think through guests, timing, Jewish rhythm, and the flow of the visit</p></div></div>
+            </section>
+          </div>
+          <div class="caption">
+            <h2>Post 3 - Plan The Feel</h2>
+            <p>Before booking every detail, decide what the visit should feel like. Our free Simcha Planning Guide helps families think through guest logistics, Jewish rhythm, beach time, heritage moments, timing, and the overall flow of a Barbados celebration.</p>
+            <p>Click through the link in our bio for the free guide.</p>
+            <p class="hashtags">#IslandMitzvah #SimchaPlanning #DestinationMitzvah #BarbadosEvents #JewishEvents #BarMitzvahPlanning #BatMitzvahPlanning #JewishWedding</p>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="post-frame">
+            <section class="post" style="--scale: calc((min(100vw, 650px) - 86px) / 1080); --image: url('review-images/image-07.jpg'); --position: center; --zoom: 1.12; --headline-size: 72px;">
+              <div class="photo"></div><div class="wash"></div>
+              <div class="brand"><img src="island-mitzvah-palm-vector-master-5000-transparent.png" alt=""><span>Island Mitzvah Co.</span></div>
+              <div class="content"><div class="panel"><p class="eyebrow">Guest Logistics</p><h2>Make the travel feel easy</h2><p class="support">Transfers, room blocks, timing, and clear plans help guests relax into Barbados from day one</p></div></div>
+            </section>
+          </div>
+          <div class="caption">
+            <h2>Post 4 - Guest Logistics</h2>
+            <p>The easier the travel, the better the celebration. Airport arrivals, room blocks, villa plans, transportation, accessibility needs, and departure timing can all shape how relaxed guests feel once they arrive in Barbados.</p>
+            <p>Island Mitzvah helps families think through the practical pieces before they become last-minute stress.</p>
+            <p class="hashtags">#IslandMitzvah #GuestLogistics #BarbadosTravel #DestinationEvents #JewishFamilyTravel #EventPlanning #CaribbeanTravel</p>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="post-frame">
+            <section class="post alt" style="--scale: calc((min(100vw, 650px) - 86px) / 1080); --image: url('review-images/image-12.jpg'); --position: center; --zoom: 1.12; --headline-size: 70px;">
+              <div class="photo"></div><div class="wash"></div>
+              <div class="brand"><img src="island-mitzvah-palm-vector-master-5000-transparent.png" alt=""><span>Island Mitzvah Co.</span></div>
+              <div class="content"><div class="panel"><p class="eyebrow">Welcome Details</p><h2>Small touches set<br>the tone</h2><p class="support">Local color, welcome notes, thoughtful timing, and warm hosting help guests feel cared for</p></div></div>
+            </section>
+          </div>
+          <div class="caption">
+            <h2>Post 5 - Welcome Details</h2>
+            <p>Small details set the tone for the whole visit. Local color, welcome notes, guest timing, thoughtful transportation, and a clear first plan can help everyone feel at home from day one.</p>
+            <p>Island Mitzvah helps families turn those details into a warm Barbados welcome.</p>
+            <p class="hashtags">#IslandMitzvah #BarbadosEvents #GuestExperience #JewishEvents #DestinationMitzvah #EventPlanning #CaribbeanEvents</p>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="post-frame">
+            <section class="post bottom" style="--scale: calc((min(100vw, 650px) - 86px) / 1080); --image: url('review-images/image-14.jpg'); --position: 52% center; --zoom: 1.08; --headline-size: 68px;">
+              <div class="photo"></div><div class="wash"></div>
+              <div class="brand"><img src="island-mitzvah-palm-vector-master-5000-transparent.png" alt=""><span>Island Mitzvah Co.</span></div>
+              <div class="tag">Nidhe Israel</div>
+              <div class="content"><div class="panel"><p class="eyebrow">Jewish Rhythm</p><h2>Let heritage be part of the simcha</h2><p class="support">Synagogue visits, services, mikvah, and Barbadian Jewish history can deepen the visit</p></div></div>
+            </section>
+          </div>
+          <div class="caption">
+            <h2>Post 6 - Jewish Rhythm</h2>
+            <p>Let heritage be part of the simcha. A Barbados visit can include Nidhe Israel Synagogue, services, mikvah, Barbadian Jewish history, and meaningful time for family to connect with the island's Jewish story.</p>
+            <p>Island Mitzvah helps families incorporate those moments respectfully and thoughtfully.</p>
+            <p class="hashtags">#IslandMitzvah #JewishBarbados #NidheIsrael #JewishHeritage #JewishTravel #DestinationMitzvah #BarbadosHistory</p>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script>
+      function sizePosts() {
+        document.querySelectorAll(".post-frame").forEach((frame) => {
+          const post = frame.querySelector(".post");
+          post.style.transform = `scale(${frame.clientWidth / 1080})`;
+        });
+      }
+
+      window.addEventListener("load", sizePosts);
+      window.addEventListener("resize", sizePosts);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Island Mitzvah Reviewed Social Drafts</title>
+    <style>
+      :root {
+        --logo-background: #f6f3ee;
+        --ink: #063f4b;
+        --teal: #0d5964;
+        --sea: #2f7f86;
+        --coral: #c86f4a;
+        --gold: #d4a650;
+        --paper: #fffaf2;
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #e7dfd1;
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body.render-one {
+        background: transparent;
+      }
+
+      .stage {
+        display: grid;
+        grid-template-columns: repeat(3, 1080px);
+        gap: 48px;
+        padding: 48px;
+      }
+
+      body.render-one .stage {
+        display: block;
+        padding: 0;
+      }
+
+      body.render-one .post {
+        display: none;
+      }
+
+      body.render-one.post-1 #post-1,
+      body.render-one.post-2 #post-2,
+      body.render-one.post-3 #post-3,
+      body.render-one.post-4 #post-4,
+      body.render-one.post-5 #post-5,
+      body.render-one.post-6 #post-6 {
+        display: block;
+      }
+
+      .post {
+        position: relative;
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--logo-background);
+      }
+
+      .photo {
+        position: absolute;
+        inset: 0;
+        background-image: var(--image);
+        background-position: var(--position, center);
+        background-size: cover;
+        transform: scale(var(--zoom, 1));
+      }
+
+      .wash {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(246, 243, 238, 0.94) 0%, rgba(246, 243, 238, 0.78) 38%, rgba(246, 243, 238, 0.1) 76%),
+          linear-gradient(180deg, rgba(6, 63, 75, 0.04), rgba(6, 63, 75, 0.16));
+      }
+
+      .post:nth-child(3n + 2) .wash {
+        background:
+          linear-gradient(180deg, rgba(246, 243, 238, 0.12), rgba(246, 243, 238, 0.84)),
+          linear-gradient(90deg, rgba(6, 63, 75, 0.08), rgba(6, 63, 75, 0.02));
+      }
+
+      .post:nth-child(3n) .wash {
+        background:
+          linear-gradient(180deg, rgba(6, 63, 75, 0.14), rgba(6, 63, 75, 0.02) 46%, rgba(246, 243, 238, 0.88)),
+          linear-gradient(90deg, rgba(246, 243, 238, 0.05), rgba(246, 243, 238, 0.46));
+      }
+
+      .brand {
+        position: absolute;
+        top: 42px;
+        left: 48px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 10px 16px 10px 12px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 18px 36px rgba(6, 63, 75, 0.14);
+      }
+
+      .brand img {
+        width: 58px;
+        height: 58px;
+        object-fit: contain;
+      }
+
+      .brand span {
+        font-size: 25px;
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .content {
+        position: absolute;
+        left: 58px;
+        right: 58px;
+        bottom: 58px;
+        max-width: 830px;
+      }
+
+      .post:nth-child(3n + 2) .content,
+      .post:nth-child(3n) .content {
+        top: 650px;
+        bottom: auto;
+        max-width: 880px;
+      }
+
+      .panel {
+        display: inline-block;
+        padding: 34px 38px 38px;
+        background: rgba(255, 250, 242, 0.96);
+        border-top: 8px solid var(--gold);
+        box-shadow: 0 22px 46px rgba(6, 63, 75, 0.16);
+      }
+
+      .post:nth-child(4n + 2) .panel {
+        border-top-color: var(--sea);
+      }
+
+      .post:nth-child(4n + 3) .panel {
+        border-top-color: var(--coral);
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0 0 18px;
+        color: var(--coral);
+        font-size: 24px;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 52px;
+        height: 4px;
+        background: var(--gold);
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 800px;
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: var(--headline-size, 74px);
+        font-weight: 700;
+        line-height: 0.96;
+        letter-spacing: 0;
+      }
+
+      .support {
+        margin: 22px 0 0;
+        max-width: 800px;
+        color: rgba(6, 63, 75, 0.86);
+        font-size: 31px;
+        font-weight: 800;
+        line-height: 1.18;
+      }
+
+      .tag {
+        position: absolute;
+        right: 48px;
+        top: 48px;
+        max-width: 295px;
+        padding: 20px 22px;
+        background: var(--ink);
+        color: var(--white);
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 1.12;
+      }
+
+      .post-1 { --image: url("source-images/image-01.jpg"); --position: center; --zoom: 1.14; --headline-size: 72px; }
+      .post-2 { --image: url("source-images/image-04.jpg"); --position: center; --zoom: 1.12; --headline-size: 73px; }
+      .post-3 { --image: url("source-images/image-05.jpg"); --position: center; --zoom: 1.12; --headline-size: 70px; }
+      .post-4 { --image: url("source-images/image-07.jpg"); --position: center; --zoom: 1.12; --headline-size: 72px; }
+      .post-5 { --image: url("source-images/image-12.jpg"); --position: center; --zoom: 1.12; --headline-size: 70px; }
+      .post-6 { --image: url("source-images/image-14.jpg"); --position: 52% center; --zoom: 1.08; --headline-size: 68px; }
+    </style>
+  </head>
+  <body>
+    <main class="stage">
+      <section class="post post-1" id="post-1">
+        <div class="photo"></div><div class="wash"></div>
+        <div class="brand"><img src="../../island-mitzvah-palm-vector-master-5000-transparent.png" alt=""><span>Island Mitzvah Co.</span></div>
+        <div class="content"><div class="panel"><p class="eyebrow">Island Breathing Room</p><h1>Let the visit have room to breathe</h1><p class="support">A Barbados simcha can include quiet mornings, nature, and space between the big moments</p></div></div>
+      </section>
+
+      <section class="post post-2" id="post-2">
+        <div class="photo"></div><div class="wash"></div>
+        <div class="brand"><img src="../../island-mitzvah-palm-vector-master-5000-transparent.png" alt=""><span>Island Mitzvah Co.</span></div>
+        <div class="content"><div class="panel"><p class="eyebrow">Ocean Time</p><h1>Build in the moments you remember</h1><p class="support">Beach time, snorkel time, and unhurried island days can make a simcha feel like a true family trip</p></div></div>
+      </section>
+
+      <section class="post post-3" id="post-3">
+        <div class="photo"></div><div class="wash"></div>
+        <div class="brand"><img src="../../island-mitzvah-palm-vector-master-5000-transparent.png" alt=""><span>Island Mitzvah Co.</span></div>
+        <div class="tag">Free Simcha Planning Guide</div>
+        <div class="content"><div class="panel"><p class="eyebrow">Start Here</p><h1>Plan the vibe before the bookings</h1><p class="support">Our guide helps families think through guests, timing, Jewish rhythm, and the flow of the visit</p></div></div>
+      </section>
+
+      <section class="post post-4" id="post-4">
+        <div class="photo"></div><div class="wash"></div>
+        <div class="brand"><img src="../../island-mitzvah-palm-vector-master-5000-transparent.png" alt=""><span>Island Mitzvah Co.</span></div>
+        <div class="content"><div class="panel"><p class="eyebrow">Guest Logistics</p><h1>Make the travel feel easy</h1><p class="support">Transfers, room blocks, timing, and clear plans help guests relax into Barbados from day one</p></div></div>
+      </section>
+
+      <section class="post post-5" id="post-5">
+        <div class="photo"></div><div class="wash"></div>
+        <div class="brand"><img src="../../island-mitzvah-palm-vector-master-5000-transparent.png" alt=""><span>Island Mitzvah Co.</span></div>
+        <div class="content"><div class="panel"><p class="eyebrow">Welcome Details</p><h1>Small touches set<br>the tone</h1><p class="support">Local color, welcome notes, thoughtful timing, and warm hosting help guests feel cared for</p></div></div>
+      </section>
+
+      <section class="post post-6" id="post-6">
+        <div class="photo"></div><div class="wash"></div>
+        <div class="brand"><img src="../../island-mitzvah-palm-vector-master-5000-transparent.png" alt=""><span>Island Mitzvah Co.</span></div>
+        <div class="tag">Nidhe Israel</div>
+        <div class="content"><div class="panel"><p class="eyebrow">Jewish Rhythm</p><h1>Let heritage be part of the simcha</h1><p class="support">Synagogue visits, services, mikvah, and Barbadian Jewish history can deepen the visit</p></div></div>
+      </section>
+    </main>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const post = params.get("post");
+      if (post) {
+        document.body.classList.add("render-one", `post-${post}`);
+      }
+    </script>
+  </body>
+</html>
